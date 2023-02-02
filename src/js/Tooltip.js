@@ -40,7 +40,7 @@ function createElement(tagName, options, ...children) {
   return node;
 }
 
-function createTooltip() {
+export function createTooltip() {
   const titleTooltip = createElement('p', {
     className: 'title_tooltip',
     textContent: 'Вот и птичка ;)',
@@ -71,6 +71,7 @@ export default function checkTooltip(button) {
   const tooltipBox = document.querySelector('.container_tooltip');
   if (tooltipBox === null) {
     const tooltip = createTooltip();
+    console.log(tooltipBox);
     parent.appendChild(tooltip);
     tooltip.style.bottom = `${tooltip.offsetHeight / 2}px`;
   } else {
